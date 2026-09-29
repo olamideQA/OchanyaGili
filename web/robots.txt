@@ -1,0 +1,27 @@
+# robots.txt for Ochanya Gili Luxury Fashion Atelier
+User-agent: *
+Allow: /
+Allow: /collections
+Allow: /collections/*
+Allow: /shop
+Allow: /shop/*
+Allow: /lookbook
+Allow: /lookbook/*
+Allow: /journal
+Allow: /journal/*
+Allow: /about
+Allow: /contact
+Allow: /create-your-look
+
+# Disallow private user accounts and staff dashboards
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /account
+Disallow: /account/*
+Disallow: /checkout
+Disallow: /checkout/*
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+
+Sitemap: https://ochanyagili.com/sitemap.xml
