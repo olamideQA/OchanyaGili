@@ -15,8 +15,8 @@ class LookbookRepository {
       title: 'Look 01 — The Althea Cathedral Bridal Gown',
       slug: 'look-01-althea-cathedral-bridal-gown',
       description: 'Hand-beaded French chantilly lace gown with boned illusion corset and a 2.5-meter cathedral train.',
-      coverImageUrl: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=800&h=1000&auto=format&fit=crop',
-      fullImageUrl: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=1080&h=1440&auto=format&fit=crop',
+      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_wedding_bride_white.jpg',
+      fullImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_couture_veil.jpg',
       designerNotes:
           '“Each micro-pearl and crystal bead is hand-sewn over 180 hours in our Lagos atelier to achieve an ethereal illusion of floating lace on melanin skin.”',
       collectionName: 'The Royal Bridal Atelier',
@@ -31,8 +31,8 @@ class LookbookRepository {
       title: 'Look 02 — The Seraphina Silk Mikado Bridal Gown',
       slug: 'look-02-seraphina-silk-mikado-bridal-gown',
       description: 'Architectural off-shoulder mermaid wedding gown sculpted in heavyweight Italian silk mikado.',
-      coverImageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&h=1000&auto=format&fit=crop',
-      fullImageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1080&h=1440&auto=format&fit=crop',
+      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_bride_portrait.jpg',
+      fullImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_bridal_smile.jpg',
       designerNotes:
           '“Clean, unapologetic architectural majesty for the modern bride commanding quiet luxury.”',
       collectionName: 'The Royal Bridal Atelier',
@@ -47,8 +47,8 @@ class LookbookRepository {
       title: 'Look 03 — The Amina Corseted Reception Gown',
       slug: 'look-03-amina-corseted-reception-gown',
       description: 'Emerald French lace with hand-sewn bugle beads, boned internal corset, and godet train.',
-      coverImageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=800&h=1000&auto=format&fit=crop',
-      fullImageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1080&h=1440&auto=format&fit=crop',
+      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_gele_emerald.jpg',
+      fullImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/northern_nigerian_bride.jpg',
       designerNotes:
           '“Engineered with our signature cinching corset structure to give the bride effortless movement for a 12-hour Nigerian wedding reception.”',
       collectionName: 'Owambe Éclat',
@@ -63,8 +63,8 @@ class LookbookRepository {
       title: 'Look 04 — The Alaari Handwoven Aso-Oke Suit',
       slug: 'look-04-alaari-handwoven-aso-oke-suit',
       description: 'Crimson & metallic gold handwoven Aso-Oke cropped blazer with high-waist cigarette trousers.',
-      coverImageUrl: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=800&h=1000&auto=format&fit=crop',
-      fullImageUrl: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=1080&h=1440&auto=format&fit=crop',
+      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_fashion_week_runway.jpg',
+      fullImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_models_fashion.jpg',
       designerNotes:
           '“Woven on traditional vertical looms in southwestern Nigeria using heritage cotton and metallic lurex threads.”',
       collectionName: 'Heritage Weavers',
@@ -73,6 +73,22 @@ class LookbookRepository {
       isPublished: true,
       sortOrder: 4,
       linkedProductIds: ['prod-rtw-alaari-suit'],
+    ),
+    const LookbookEntry(
+      id: 'look-5',
+      title: 'Look 05 — The Royal Edo Coral Empress',
+      slug: 'look-05-royal-edo-coral-empress',
+      description: 'Authentic Edo traditional royal bridal regalia featuring Okuku crown and multi-tiered coral beads.',
+      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_bride_coral_regalia.jpg',
+      fullImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_traditional_ceremony.jpg',
+      designerNotes:
+          '“A profound tribute to ancient Benin royal sovereignty, handcrafted with authentic precious coral beads.”',
+      collectionName: 'The Royal Bridal Atelier',
+      modelName: 'Osas Ighodaro',
+      photographer: 'Kola Oshalusi',
+      isPublished: true,
+      sortOrder: 5,
+      linkedProductIds: ['prod-bridal-edo-coral-1'],
     ),
   ];
 

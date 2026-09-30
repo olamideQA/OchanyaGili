@@ -6,7 +6,7 @@ class SeoMetadata extends Equatable {
   static const String baseUrl = 'https://ochanyagili.com';
   static const String siteName = 'Ochanya Gili';
   static const String defaultImage =
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop';
+      'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_wedding_bride_white.jpg';
 
   final String title;
   final String description;

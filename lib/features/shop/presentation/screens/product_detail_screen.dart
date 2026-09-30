@@ -221,7 +221,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                           id: 'demo-1',
                           productId: product.id,
                           imageUrl:
-                              'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=900&h=1200&auto=format&fit=crop')
+                              'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_wedding_bride_white.jpg')
                     ]
                   : const <ProductImage>[]);
 

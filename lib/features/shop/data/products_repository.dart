@@ -32,13 +32,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-bridal-1a',
           productId: 'prod-bridal-althea-gown',
-          imageUrl: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_wedding_bride_white.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-bridal-1b',
           productId: 'prod-bridal-althea-gown',
-          imageUrl: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_couture_veil.jpg',
         ),
       ],
       variants: const [
@@ -66,13 +66,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-seraphina-1',
           productId: 'prod-bridal-seraphina-gown',
-          imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_bride_portrait.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-seraphina-2',
           productId: 'prod-bridal-seraphina-gown',
-          imageUrl: 'https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_bridal_smile.jpg',
         ),
       ],
       variants: const [
@@ -83,7 +83,41 @@ class ProductsRepository {
       ],
     ),
 
-    // 3. READY_TO_WEAR: Ivory Tuxedo Blazer
+    // 3. TRADITIONAL BRIDAL: Edo Coral Empress Regalia
+    Product(
+      id: 'prod-bridal-edo-coral-1',
+      name: 'The Royal Edo Coral Empress Bridal Regalia',
+      slug: 'the-royal-edo-coral-empress-bridal-regalia',
+      shortDescription: 'Imperial Benin bridal regalia with handcrafted Okuku crown, multi-tiered royal coral beads, and crimson velvet.',
+      description:
+          'A magnificent manifestation of ancient Benin kingdom sovereignty. Features genuine polished coral bead strands cascaded into tiered neckpieces, a sculpted Okuku bridal crown adorned with bronze hairpins, and a regal cape tailored in deep crimson velvet.',
+      productType: ProductType.madeToOrder,
+      basePrice: 1250000.0,
+      materials: 'Natural Italian Red Coral Beads, Brass and Bronze Alloys, Royal Velvet, Silk Satin Lining.',
+      careInstructions: 'Specialist heritage preservation only.',
+      sizeGuide: 'Custom tailored to individual head circumference and anatomical measurements.',
+      productionTimeDays: 21,
+      deliveryEstimate: '3 – 5 Weeks Royal Atelier Handcrafting & Salon Fitting',
+      isFeatured: true,
+      images: const [
+        ProductImage(
+          id: 'img-edo-1',
+          productId: 'prod-bridal-edo-coral-1',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_bride_coral_regalia.jpg',
+          isPrimary: true,
+        ),
+        ProductImage(
+          id: 'img-edo-2',
+          productId: 'prod-bridal-edo-coral-1',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_traditional_ceremony.jpg',
+        ),
+      ],
+      variants: const [
+        ProductVariant(id: 'var-edo-1', productId: 'prod-bridal-edo-coral-1', size: 'Royal Bespoke', colour: 'Imperial Crimson & Coral', sku: 'OG-EDO-COR-01', stockQuantity: 99),
+      ],
+    ),
+
+    // 4. READY_TO_WEAR: Ivory Tuxedo Blazer
     Product(
       id: 'prod-rtw-blazer-1',
       name: 'Structured Ivory Tuxedo Blazer',
@@ -103,13 +137,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-blazer-1',
           productId: 'prod-rtw-blazer-1',
-          imageUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_couture_model.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-blazer-2',
           productId: 'prod-rtw-blazer-1',
-          imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/igbo_bride_traditional.jpg',
         ),
       ],
       variants: const [
@@ -119,7 +153,7 @@ class ProductsRepository {
       ],
     ),
 
-    // 4. MADE_TO_ORDER: Sovereign Peplum Evening Gown
+    // 5. MADE_TO_ORDER: Sovereign Peplum Evening Gown
     Product(
       id: 'prod-mto-peplum-gown-1',
       name: 'The Sovereign Peplum Evening Gown',
@@ -139,13 +173,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-gown-1',
           productId: 'prod-mto-peplum-gown-1',
-          imageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_aso_oke.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-gown-2',
           productId: 'prod-mto-peplum-gown-1',
-          imageUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_traditional.jpg',
         ),
       ],
       variants: const [
@@ -154,7 +188,7 @@ class ProductsRepository {
       ],
     ),
 
-    // 5. MADE_TO_ORDER: Amina Corseted Reception Gown
+    // 6. MADE_TO_ORDER: Amina Corseted Reception Gown
     Product(
       id: 'prod-mto-amina-reception',
       name: 'The Amina Corseted Mermaid Reception Gown',
@@ -174,13 +208,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-amina-1',
           productId: 'prod-mto-amina-reception',
-          imageUrl: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_gele_emerald.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-amina-2',
           productId: 'prod-mto-amina-reception',
-          imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/northern_nigerian_bride.jpg',
         ),
       ],
       variants: const [
@@ -189,7 +223,7 @@ class ProductsRepository {
       ],
     ),
 
-    // 6. READY_TO_WEAR: Alaari Handwoven Aso-Oke Suit
+    // 7. READY_TO_WEAR: Alaari Handwoven Aso-Oke Suit
     Product(
       id: 'prod-rtw-alaari-suit',
       name: 'The Alaari Handwoven Aso-Oke Tailored Suit',
@@ -209,13 +243,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-alaari-1',
           productId: 'prod-rtw-alaari-suit',
-          imageUrl: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_fashion_week_runway.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-alaari-2',
           productId: 'prod-rtw-alaari-suit',
-          imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_models_fashion.jpg',
         ),
       ],
       variants: const [
@@ -225,7 +259,7 @@ class ProductsRepository {
       ],
     ),
 
-    // 7. READY_TO_WEAR: Abeokuta Indigo Silk Robe Dress
+    // 8. READY_TO_WEAR: Abeokuta Indigo Silk Robe Dress
     Product(
       id: 'prod-rtw-adire-robe',
       name: 'The Abeokuta Indigo Silk Adire Robe Dress',
@@ -244,13 +278,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-adire-1',
           productId: 'prod-rtw-adire-robe',
-          imageUrl: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_gele_headgear.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-adire-2',
           productId: 'prod-rtw-adire-robe',
-          imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_couture_model.jpg',
         ),
       ],
       variants: const [
@@ -259,7 +293,7 @@ class ProductsRepository {
       ],
     ),
 
-    // 8. CUSTOM: Bespoke Royal Ceremonial Ensemble
+    // 9. CUSTOM: Bespoke Royal Ceremonial Ensemble
     Product(
       id: 'prod-custom-royal-ensemble-1',
       name: 'Bespoke Royal Ceremonial Ensemble',
@@ -278,8 +312,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-custom-1',
           productId: 'prod-custom-royal-ensemble-1',
-          imageUrl: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_traditional.jpg',
           isPrimary: true,
+        ),
+        ProductImage(
+          id: 'img-custom-2',
+          productId: 'prod-custom-royal-ensemble-1',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_traditional_ceremony.jpg',
         ),
       ],
       variants: const [
@@ -287,7 +326,7 @@ class ProductsRepository {
       ],
     ),
 
-    // 9. ACCESSORY: Benin Bullion Cuff
+    // 10. ACCESSORY: Benin Bullion Cuff
     Product(
       id: 'prod-acc-gold-cuff-1',
       name: 'Hand-Chiseled Bullion Architectural Cuff',
@@ -305,7 +344,7 @@ class ProductsRepository {
         ProductImage(
           id: 'img-cuff-1',
           productId: 'prod-acc-gold-cuff-1',
-          imageUrl: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/igbo_bride_regal.jpg',
           isPrimary: true,
         ),
       ],

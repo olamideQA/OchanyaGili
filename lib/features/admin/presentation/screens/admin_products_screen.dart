@@ -95,7 +95,7 @@ class _AdminProductsScreenState extends ConsumerState<AdminProductsScreen> {
                             imageUrl: imgController.text.trim().isNotEmpty
                                 ? imgController.text.trim()
                                 : (DemoConfig.enabled
-                                    ? 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=900&h=1200&auto=format&fit=crop'
+                                    ? 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_couture_model.jpg'
                                     : ''),
                             isPrimary: true,
                           ),

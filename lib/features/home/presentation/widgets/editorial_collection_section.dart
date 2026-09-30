@@ -27,22 +27,27 @@ class EditorialCollectionSection extends StatelessWidget {
       {
         'title': 'Look 01 — The Althea Bridal Gown',
         'subtitle': 'French Chantilly Lace & Micro-Pearls',
-        'image': 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=800&auto=format&fit=crop',
+        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_wedding_bride_white.jpg',
       },
       {
         'title': 'Look 02 — The Amina Reception Gown',
         'subtitle': 'Emerald Bugle-Beaded Lace & Corset',
-        'image': 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=800&auto=format&fit=crop',
+        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_gele_emerald.jpg',
       },
       {
         'title': 'Look 03 — The Alaari Aso-Oke Suit',
         'subtitle': 'Handwoven Crimson Cotton & Gold Lurex',
-        'image': 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=800&auto=format&fit=crop',
+        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_fashion_week_runway.jpg',
       },
       {
         'title': 'Look 04 — The Seraphina Mikado Gown',
         'subtitle': 'Architectural Off-Shoulder Trumpet Silk',
-        'image': 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop',
+        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_bride_portrait.jpg',
+      },
+      {
+        'title': 'Look 05 — The Royal Edo Coral Empress',
+        'subtitle': 'Okuku Crown & Tiered Coral Regalia',
+        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_bride_coral_regalia.jpg',
       },
     ]
         : const <Map<String, String>>[];
