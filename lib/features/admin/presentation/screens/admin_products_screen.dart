@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:ochanya_gili/core/config/demo_config.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
 import 'package:ochanya_gili/features/admin/presentation/widgets/garment_measurements_config_dialog.dart';
+import 'package:ochanya_gili/features/media/data/media_service.dart';
 import 'package:ochanya_gili/features/shop/data/products_repository.dart';
 import 'package:ochanya_gili/features/shop/domain/models/product.dart';
 
@@ -23,6 +25,8 @@ class _AdminProductsScreenState extends ConsumerState<AdminProductsScreen> {
     final materialsController = TextEditingController(text: existing?.materials ?? '100% Raw Silk & Wool Crepe');
     final imgController = TextEditingController(text: existing?.primaryImageUrl ?? '');
     ProductType selectedType = existing?.productType ?? ProductType.readyToWear;
+    bool isUploadingImage = false;
+    String? uploadError;
 
     showDialog(
       context: context,
@@ -58,7 +62,65 @@ class _AdminProductsScreenState extends ConsumerState<AdminProductsScreen> {
                         decoration: const InputDecoration(labelText: 'Base Price (NGN ₦)'),
                       ),
                       const SizedBox(height: 12),
-                      TextField(controller: imgController, decoration: const InputDecoration(labelText: 'Primary Artwork Image URL')),
+                      TextField(
+                          controller: imgController,
+                          decoration: const InputDecoration(labelText: 'Primary Artwork Image URL'),
+                          onChanged: (_) => setDialogState(() {})),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          if (imgController.text.trim().isNotEmpty)
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.network(imgController.text.trim(), width: 72, height: 72, fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) => const SizedBox.shrink()),
+                            ),
+                          if (imgController.text.trim().isNotEmpty) const SizedBox(width: 12),
+                          Expanded(
+                            child: OutlinedButton.icon(
+                              onPressed: isUploadingImage
+                                  ? null
+                                  : () async {
+                                      final picked = await ImagePicker().pickImage(source: ImageSource.gallery);
+                                      if (picked == null) return;
+                                      setDialogState(() {
+                                        isUploadingImage = true;
+                                        uploadError = null;
+                                      });
+                                      try {
+                                        final bytes = await picked.readAsBytes();
+                                        final asset = await ref.read(mediaServiceProvider).uploadAsset(
+                                              bytes: bytes,
+                                              filename: picked.name,
+                                              bucket: 'products',
+                                              title: nameController.text.trim(),
+                                            );
+                                        setDialogState(() {
+                                          imgController.text = asset.url;
+                                          isUploadingImage = false;
+                                        });
+                                      } catch (e) {
+                                        setDialogState(() {
+                                          isUploadingImage = false;
+                                          uploadError = 'Upload failed: $e';
+                                        });
+                                      }
+                                    },
+                              icon: isUploadingImage
+                                  ? const SizedBox(width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2))
+                                  : const Icon(Icons.cloud_upload_outlined, size: 18),
+                              label: Text(isUploadingImage ? 'UPLOADING...' : 'UPLOAD IMAGE'),
+                            ),
+                          ),
+                        ],
+                      ),
+                      if (uploadError != null) ...[
+                        const SizedBox(height: 4),
+                        Text(uploadError!, style: const TextStyle(color: Colors.red, fontSize: 12)),
+                      ],
+                      const SizedBox(height: 4),
+                      const Text('Upload from your device or paste an image URL above.',
+                          style: TextStyle(fontSize: 11, color: Colors.grey)),
                       const SizedBox(height: 12),
                       TextField(controller: materialsController, decoration: const InputDecoration(labelText: 'Materials & Textiles')),
                       const SizedBox(height: 12),
@@ -71,7 +133,10 @@ class _AdminProductsScreenState extends ConsumerState<AdminProductsScreen> {
                 TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
                 ElevatedButton(
                   onPressed: () async {
-                    final repo = ref.read(productsRepositoryProvider);
+                    final messenger = ScaffoldMessenger.of(context);
+                    final colors = Theme.of(context).extension<AppColorTokens>()!;
+                    try {
+                      final repo = ref.read(productsRepositoryProvider);
                     final name = nameController.text.trim();
                     final slug = slugController.text.trim().isNotEmpty
                         ? slugController.text.trim()
@@ -122,7 +187,19 @@ class _AdminProductsScreenState extends ConsumerState<AdminProductsScreen> {
 
                     ref.invalidate(adminProductsProvider);
                     ref.invalidate(allPublishedProductsProvider);
-                    if (context.mounted) Navigator.pop(context);
+                    if (context.mounted) {
+                      Navigator.pop(context);
+                      messenger.showSnackBar(
+                        SnackBar(content: Text('“$name” saved to the boutique'), backgroundColor: colors.success),
+                      );
+                    }
+                  } catch (e) {
+                    if (context.mounted) {
+                      messenger.showSnackBar(
+                        SnackBar(content: Text('Save failed: $e'), backgroundColor: Colors.red),
+                      );
+                    }
+                  }
                   },
                   child: const Text('Save Creation'),
                 ),

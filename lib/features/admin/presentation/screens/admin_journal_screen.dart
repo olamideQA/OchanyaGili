@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
 import 'package:ochanya_gili/features/admin/data/admin_repository.dart';
+import 'package:ochanya_gili/features/cms/data/cms_repository.dart';
 import 'package:ochanya_gili/features/journal/domain/models/journal_post.dart';
 
 class AdminJournalScreen extends ConsumerStatefulWidget {
@@ -163,6 +164,7 @@ class _AdminJournalScreenState extends ConsumerState<AdminJournalScreen> {
                             if (context.mounted) {
                               Navigator.pop(dialogCtx);
                               ref.invalidate(adminJournalPostsProvider);
+                              ref.invalidate(journalPostsProvider);
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text('Editorial "$title" published to Journal'),
@@ -239,7 +241,10 @@ class _AdminJournalScreenState extends ConsumerState<AdminJournalScreen> {
                 Row(
                   children: [
                     OutlinedButton.icon(
-                      onPressed: () => ref.invalidate(adminJournalPostsProvider),
+                      onPressed: () {
+                        ref.invalidate(adminJournalPostsProvider);
+                        ref.invalidate(journalPostsProvider);
+                      },
                       icon: const Icon(Icons.refresh, size: 16),
                       label: const Text('REFRESH'),
                       style: OutlinedButton.styleFrom(
@@ -429,6 +434,7 @@ class _AdminJournalScreenState extends ConsumerState<AdminJournalScreen> {
                                                 .read(adminRepositoryProvider)
                                                 .toggleJournalPublish(p.id, val);
                                             ref.invalidate(adminJournalPostsProvider);
+                                            ref.invalidate(journalPostsProvider);
                                           },
                                         ),
                                       ],
