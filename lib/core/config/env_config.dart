@@ -20,8 +20,13 @@ enum AppEnvironment {
 }
 
 /// Unified Environment & Deployment Configuration
-/// Supports compile-time `--dart-define` injection for secure CI/CD pipelines
-/// with automated fallback and credential isolation.
+///
+/// TEMPLATE NOTE: every value below ships EMPTY (or generic) on purpose.
+/// There are no fallback credentials — a build without `--dart-define`
+/// fails fast with a setup message instead of silently phoning home to
+/// the template author's backend. Buyers configure via
+/// `tool/local_env.json` (gitignored) + `tool/run_dev.ps1` /
+/// `tool/build_web.ps1`, see TEMPLATE_SETUP.md.
 class EnvConfig {
   static const String environmentName = String.fromEnvironment(
     'ENVIRONMENT',
@@ -34,41 +39,43 @@ class EnvConfig {
   static bool get isStaging => environment == AppEnvironment.staging;
   static bool get isDevelopment => environment == AppEnvironment.development;
 
-  // Supabase Infrastructure
+  // Supabase Infrastructure (REQUIRED — no defaults by design)
   static const String supabaseUrl = String.fromEnvironment(
     'SUPABASE_URL',
-    defaultValue: 'https://gfobzdetjbqwrxnutrkj.supabase.co',
+    defaultValue: '',
   );
 
   static const String supabaseAnonKey = String.fromEnvironment(
     'SUPABASE_ANON_KEY',
-    defaultValue:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdmb2J6ZGV0amJxd3J4bnV0cmtqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA2MzQzMDYsImV4cCI6MjEwNjIxMDMwNn0.7twBT6zr8ctBxPLkC42MPqyQkc9FwEJdvfyi5nab93g',
+    defaultValue: '',
   );
 
-  // Domains & CDN
+  static bool get isBackendConfigured =>
+      supabaseUrl.isNotEmpty && supabaseAnonKey.isNotEmpty;
+
+  // Domains & CDN (buyer-owned)
   static const String siteUrl = String.fromEnvironment(
     'SITE_URL',
-    defaultValue: 'https://ochanyagili.com',
+    defaultValue: '',
   );
 
   static const String cdnUrl = String.fromEnvironment(
     'CDN_URL',
-    defaultValue: 'https://cdn.ochanyagili.com',
+    defaultValue: '',
   );
 
-  // Payment Gateway (Paystack)
+  // Payment Gateway (Paystack — buyer keys)
   static const String paystackPublicKey = String.fromEnvironment(
     'PAYSTACK_PUBLIC_KEY',
-    defaultValue: 'pk_live_ochanya_production_secure_dummy_key_2026',
+    defaultValue: '',
   );
 
   static const String paystackWebhookUrl = String.fromEnvironment(
     'PAYSTACK_WEBHOOK_URL',
-    defaultValue: 'https://gfobzdetjbqwrxnutrkj.supabase.co/functions/v1/paystack-webhook',
+    defaultValue: '',
   );
 
-  // Observability & Telemetry
+  // Observability & Telemetry (buyer-owned, optional)
   static const String sentryDsn = String.fromEnvironment(
     'SENTRY_DSN',
     defaultValue: '',
@@ -76,23 +83,28 @@ class EnvConfig {
 
   static const String gaMeasurementId = String.fromEnvironment(
     'GA_MEASUREMENT_ID',
-    defaultValue: 'G-OCHANYA2026',
+    defaultValue: '',
   );
 
-  // Deep Linking & Universal Links
-  static const String deepLinkScheme = 'ochanyagili';
-  static const String deepLinkHost = 'ochanyagili.com';
+  // Deep Linking & Universal Links (TEMPLATE: buyer sets per brand)
+  static const String deepLinkScheme = 'atelier';
+  static const String deepLinkHost = '';
 
-  // Maison Contacts
-  static const String supportEmail = 'concierge@ochanyagili.com';
-  static const String contactPhone = '+234 800 OCHANYA';
-  static const String atelierLocation = 'Victoria Island, Lagos, Nigeria';
+  // Maison Contacts (TEMPLATE: buyer-owned; real values live in backend settings)
+  static const String supportEmail = '';
+  static const String contactPhone = '';
+  static const String atelierLocation = '';
 
   /// Validates environment integrity at startup.
-  /// Ensures development credentials are never quietly bundled into production builds.
+  /// Throws a human-readable error (all modes, not just debug) so a
+  /// misconfigured buyer build fails loudly instead of half-working.
   static void validate() {
-    assert(supabaseUrl.isNotEmpty, 'SUPABASE_URL must be configured');
-    assert(supabaseAnonKey.isNotEmpty, 'SUPABASE_ANON_KEY must be configured');
-    assert(siteUrl.startsWith('https://'), 'SITE_URL must use SSL in all environments');
+    if (!isBackendConfigured) {
+      throw StateError(
+        'SUPABASE_URL and SUPABASE_ANON_KEY are missing. '
+        'Run tool/run_dev.ps1 (dev) or tool/build_web.ps1 (release) with '
+        'tool/local_env.json configured. See TEMPLATE_SETUP.md.',
+      );
+    }
   }
 }

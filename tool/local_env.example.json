@@ -1,0 +1,6 @@
+{
+  "SUPABASE_URL": "https://xyzcompany.supabase.co",
+  "SUPABASE_ANON_KEY": "PASTE_ANON_JWT_HERE",
+  "SITE_URL": "https://shop.example.com",
+  "ENVIRONMENT": "production"
+}

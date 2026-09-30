@@ -62,6 +62,7 @@ google-services.json
 GoogleService-Info.plist
 *secret*
 *credentials*
+tool/local_env.json
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
