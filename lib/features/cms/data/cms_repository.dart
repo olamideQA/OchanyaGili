@@ -47,13 +47,23 @@ class CmsRepository {
       ),
       HeroSlide(
         id: 'default-slide-2',
-        title: 'CREATE YOUR LOOK',
-        subtitle: 'Your Vision. Our Craftsmanship.',
-        ctaText: 'DISCOVER BESPOKE ATELIER',
-        ctaLink: '/account/custom-requests',
-        desktopImageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1920&h=1080&auto=format&fit=crop',
-        mobileImageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=768&h=1024&auto=format&fit=crop',
+        title: 'THE ROYAL BRIDAL ATELIER',
+        subtitle: 'Cathedral Trains, Corseted French Lace & Traditional Regalia.',
+        ctaText: 'EXPLORE BRIDAL COUTURE',
+        ctaLink: '/collections/bridal-couture',
+        desktopImageUrl: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=1920&h=1080&auto=format&fit=crop',
+        mobileImageUrl: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=768&h=1024&auto=format&fit=crop',
         sortOrder: 1,
+      ),
+      HeroSlide(
+        id: 'default-slide-3',
+        title: 'HERITAGE WEAVERS',
+        subtitle: 'Handwoven Aso-Oke Power Tailoring & Pure Silk.',
+        ctaText: 'DISCOVER THE COLLECTION',
+        ctaLink: '/collections/heritage-weavers',
+        desktopImageUrl: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=1920&h=1080&auto=format&fit=crop',
+        mobileImageUrl: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=768&h=1024&auto=format&fit=crop',
+        sortOrder: 2,
       ),
     ];
   }
@@ -89,13 +99,13 @@ class CmsRepository {
       );
     }
     return const EditorialBlock(
-      headline: 'AUTUMN / WINTER 2026',
-      subheadline: 'THE RESORT COLLECTION',
+      headline: 'THE ROYAL BRIDAL ATELIER',
+      subheadline: 'HAUTE COUTURE & CEREMONIAL',
       body:
-          'Structured corsetry, sculptural peplums, and hand-woven silks honoring the royal lineages of West Africa, sculpted for the contemporary cosmopolitan woman.',
-      imageUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1080&h=1350&auto=format&fit=crop',
-      ctaText: 'EXPLORE COLLECTION',
-      ctaLink: '/collections',
+          'Hand-beaded French chantilly lace, internal corset architecture, and authentic royal coral regalia sculpted for the modern African bride.',
+      imageUrl: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=1080&h=1350&auto=format&fit=crop',
+      ctaText: 'DISCOVER BRIDAL COUTURE',
+      ctaLink: '/collections/bridal-couture',
     );
   }
 
@@ -205,36 +215,64 @@ class CmsRepository {
       // fall through to demo
     }
     {
-      // DEMO-SEED START: 2 pitch journal posts. Delete block or set
-      // DemoConfig.enabled=false to strip for clean template handoff.
+      // DEMO-SEED START: 4 authentic Nigerian Haute Couture & Bridal journal posts.
       if (!DemoConfig.enabled) return [];
       return [
         JournalPost(
           id: 'post-1',
-          title: 'The Architecture of the Peplum: Reimagining Royal Nigerian Silhouettes',
-          slug: 'architecture-of-the-peplum',
+          title: 'The Anatomy of 180 Hours: Hand-Beading the Althea Cathedral Gown',
+          slug: 'anatomy-of-180-hours-bridal',
           excerpt:
-              'An exploration of how traditional Benue and Edo court attire inspires the clean structural lines of the Autumn 2026 collection.',
+              'Inside our Victoria Island bridal atelier, where French chantilly lace meets hand-strung micro-pearls and crystal bugle beading.',
           content:
-              'In the quiet sanctuary of the Maitama atelier, the journey of each silhouette begins not with fabric, but with geometry. The Nigerian peplum is not merely decorative; historically, it represented stature, authority, and ceremonial grace...\n\nBy marrying structural wool crepe with supple organza linings, the house explores tension between strength and softness.',
+              'A wedding gown is not merely an ensemble; it is a sacred canvas of memory, emotion, and sartorial majesty. In our Victoria Island atelier, the Althea gown begins with French chantilly lace selected for its delicate floral architecture...\n\nOver 180 hours of meticulous hand-beading by master artisans bring the gown to life, featuring an internal multi-boned corset that sculpts the silhouette while providing effortless comfort from church procession to midnight reception.',
           coverImageUrl:
-              'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1080&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=1080&auto=format&fit=crop',
           isPublished: true,
-          publishedAt: DateTime.now().subtract(const Duration(days: 3)),
-          tags: const ['Couture', 'Craftsmanship', 'Silhouettes'],
+          publishedAt: DateTime.now().subtract(const Duration(days: 2)),
+          tags: const ['Haute Bridal', 'Lace Craft', 'Atelier'],
         ),
         JournalPost(
           id: 'post-2',
-          title: 'Sartorial Soliloquy: Inside the Private Fitting Ritual',
-          slug: 'inside-the-private-fitting-ritual',
-          excerpt: 'Why eighteen distinct anatomical measurements are only the beginning of a true bespoke commission.',
+          title: 'From Iseyin Looms to the Global Red Carpet: The Aso-Oke Renaissance',
+          slug: 'iseyin-looms-aso-oke-renaissance',
+          excerpt:
+              'How centuries-old traditional Nigerian weaving is being reimagined into contemporary power tailoring and structured bridal regalia.',
           content:
-              'A tape measure records dimensions; a master couturier records posture, rhythm, and confidence. When a client steps into our private salon, the fitting is a collaborative dialogue...\n\nEvery seam is pinned in live harmony with how the woman moves, breaths, and commands space.',
+              'For centuries, the clatter of vertical wooden looms in Iseyin and Kogi State has yielded Nigeria’s most prestigious heritage cloth—Aso-Oke. In this editorial, creative director Ochanya reflects on blending pure cotton threads with metallic gold lurex to create sharp modern blazers and royal traditional wedding ensembles.',
           coverImageUrl:
-              'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1080&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=1080&auto=format&fit=crop',
           isPublished: true,
-          publishedAt: DateTime.now().subtract(const Duration(days: 10)),
-          tags: const ['Bespoke', 'Atelier', 'Fittings'],
+          publishedAt: DateTime.now().subtract(const Duration(days: 5)),
+          tags: const ['Aso-Oke', 'Heritage', 'Textiles'],
+        ),
+        JournalPost(
+          id: 'post-3',
+          title: 'The Modern Owambe Code: Styling Haute Couture for 12-Hour Lagos Celebrations',
+          slug: 'modern-owambe-code-lagos',
+          excerpt:
+              'Navigating the sartorial transition from grand daytime ceremony to high-energy midnight reception without sacrificing regal poise.',
+          content:
+              'The Nigerian Owambe is a theatre of high fashion, social prestige, and unbridled joy. A true couture look must not only stun when stepping out of the limousine at Eko Hotel or Balmoral, but endure hours of dancing, greeting royalty, and celebrating life with effortless grace.',
+          coverImageUrl:
+              'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1080&auto=format&fit=crop',
+          isPublished: true,
+          publishedAt: DateTime.now().subtract(const Duration(days: 9)),
+          tags: const ['Owambe', 'Occasionwear', 'Style Guide'],
+        ),
+        JournalPost(
+          id: 'post-4',
+          title: 'Inside the Private Salon: The 18-Point Bridal Fitting Ritual',
+          slug: 'inside-the-private-fitting-ritual',
+          excerpt:
+              'Why eighteen distinct anatomical measurements are only the beginning of a true bespoke bridal commission.',
+          content:
+              'A tape measure records dimensions; a master couturier records posture, poise, and rhythm. When a bride enters our private Lagos salon, every seam is draped in live harmony with how she walks, breaths, and commands space.',
+          coverImageUrl:
+              'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1080&auto=format&fit=crop',
+          isPublished: true,
+          publishedAt: DateTime.now().subtract(const Duration(days: 14)),
+          tags: const ['Bespoke', 'Bridal', 'Fittings'],
         ),
       ];
     }

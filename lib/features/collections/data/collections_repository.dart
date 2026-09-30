@@ -8,28 +8,56 @@ class CollectionsRepository {
 
   CollectionsRepository(this._client);
 
-  // DEMO-SEED START: 3 pitch collections. Delete or set DemoConfig.enabled=false.
+  // DEMO-SEED START: Nigerian Haute Couture & Bridal collections.
   static final List<CollectionItem> _defaultCollections = [
     const CollectionItem(
-      id: 'coll-autumn-2026',
-      name: 'Autumn / Winter 2026 — The Royal Peplum',
-      slug: 'autumn-winter-2026',
+      id: 'coll-bridal-couture',
+      name: 'The Royal Bridal & Ceremonial Atelier',
+      slug: 'bridal-couture',
       description:
-          'A celebration of ceremonial court majesty. Sculptural peplums, hand-woven silks, and architectural silhouettes tailored in the Maitama atelier.',
-      coverImageUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop',
-      heroImageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1920&auto=format&fit=crop',
+          'Bespoke white wedding masterpieces, reception corsetry, and royal traditional bridal attire crafted with cathedral trains, hand-beaded French lace, and authentic coral regalia.',
+      coverImageUrl: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=1200&auto=format&fit=crop',
+      heroImageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920&auto=format&fit=crop',
+      season: 'Perennial Bridal',
+      year: 2026,
+      isFeatured: true,
+      isPublished: true,
+      productCount: 12,
+    ),
+    const CollectionItem(
+      id: 'coll-owambe-eclat',
+      name: 'Owambe Éclat — Haute Soirée & Gala',
+      slug: 'owambe-eclat',
+      description:
+          'Celebration wear engineered for the grandest Lagos soirees, milestone birthdays, and red carpets. Structural corsetry, hand-appliquéd crystals, and sculptural peplums.',
+      coverImageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1200&auto=format&fit=crop',
+      heroImageUrl: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=1920&auto=format&fit=crop',
       season: 'Autumn / Winter',
       year: 2026,
       isFeatured: true,
       isPublished: true,
-      productCount: 14,
+      productCount: 16,
     ),
     const CollectionItem(
-      id: 'coll-resort-2026',
-      name: 'Resort 2026 — Sovereign Linen & Silk',
-      slug: 'resort-2026',
+      id: 'coll-heritage-weavers',
+      name: 'Heritage Weavers — Modern Aso-Oke & Silk',
+      slug: 'heritage-weavers',
       description:
-          'Effortless lightweight silhouettes designed for warm-climate soirees and coastal getaways. Fluid drapes and breathable luxury fibers.',
+          'Handwoven Nigerian textiles reimagined into sharp contemporary power tailoring, architectural cropped blazers, and liquid silk co-ord sets.',
+      coverImageUrl: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=1200&auto=format&fit=crop',
+      heroImageUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1920&auto=format&fit=crop',
+      season: 'Spring / Summer',
+      year: 2026,
+      isFeatured: false,
+      isPublished: true,
+      productCount: 10,
+    ),
+    const CollectionItem(
+      id: 'coll-lagos-solstice',
+      name: 'Lagos Solstice — Sovereign Resort & Leisure',
+      slug: 'lagos-solstice',
+      description:
+          'Fluid lightweight silhouettes designed for warm-climate soirees, Ilashe beach getaways, and tropical escapes. Hand-dyed Adire and pure mulberry silk.',
       coverImageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop',
       heroImageUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1920&auto=format&fit=crop',
       season: 'Resort',
@@ -37,20 +65,6 @@ class CollectionsRepository {
       isFeatured: false,
       isPublished: true,
       productCount: 8,
-    ),
-    const CollectionItem(
-      id: 'coll-bridal-couture',
-      name: 'Atelier Bridal & Ceremonial',
-      slug: 'bridal-couture',
-      description:
-          'Bespoke bridal masterpieces created through personal consultation. Hand-beaded lace, traditional embroidery, and timeless royalty.',
-      coverImageUrl: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1200&auto=format&fit=crop',
-      heroImageUrl: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1920&auto=format&fit=crop',
-      season: 'Perennial',
-      year: 2026,
-      isFeatured: false,
-      isPublished: true,
-      productCount: 10,
     ),
   ];
 
