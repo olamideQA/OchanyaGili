@@ -41,8 +41,8 @@ class CmsRepository {
         subtitle: 'Sartorial Sovereignty. Contemporary African Couture.',
         ctaText: 'EXPLORE ATELIER COUTURE',
         ctaLink: '/collections',
-        desktopImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_aso_oke.jpg',
-        mobileImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_aso_oke.jpg',
+        desktopImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/deola_sagoe_komole_rose.jpg',
+        mobileImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/deola_sagoe_komole_rose.jpg',
         sortOrder: 0,
       ),
       HeroSlide(
@@ -51,8 +51,8 @@ class CmsRepository {
         subtitle: 'Cathedral Trains, Corseted French Lace & Traditional Regalia.',
         ctaText: 'EXPLORE BRIDAL COUTURE',
         ctaLink: '/collections/bridal-couture',
-        desktopImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_wedding_bride_white.jpg',
-        mobileImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_wedding_bride_white.jpg',
+        desktopImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/althea_couture_gown.jpg',
+        mobileImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/althea_couture_gown.jpg',
         sortOrder: 1,
       ),
       HeroSlide(
@@ -61,8 +61,8 @@ class CmsRepository {
         subtitle: 'Handwoven Aso-Oke Power Tailoring & Pure Silk.',
         ctaText: 'DISCOVER THE COLLECTION',
         ctaLink: '/collections/heritage-weavers',
-        desktopImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_fashion_week_runway.jpg',
-        mobileImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_fashion_week_runway.jpg',
+        desktopImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/mai_atafo_tailored_suit.jpg',
+        mobileImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/mai_atafo_tailored_suit.jpg',
         sortOrder: 2,
       ),
     ];
@@ -103,7 +103,7 @@ class CmsRepository {
       subheadline: 'HAUTE COUTURE & REGAL TRADITION',
       body:
           'Bespoke white wedding masterpieces, sculpted French lace corsetry, and authentic Edo coral regalia handcrafted for the sovereign Nigerian woman.',
-      imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_bride_coral_regalia.jpg',
+      imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/lookbook/edo_bride_luxury_okuku.jpg',
       ctaText: 'DISCOVER BESPOKE COUTURE',
       ctaLink: '/collections/bridal-couture',
     );
@@ -147,7 +147,7 @@ class CmsRepository {
       designerBio:
           'Founded by Ochanya Gili, the atelier stands at the vanguard of African modernism, dressing leaders, artists, and visionaries across Lagos, Abuja, London, Paris, and New York.',
       studioAddress: 'Plot 104, Maitama Luxury Enclave, Abuja, Nigeria',
-      heroImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_couture_model.jpg',
+      heroImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/andrea_iyamah_luxury_model.jpg',
     );
   }
 
@@ -227,7 +227,7 @@ class CmsRepository {
           content:
               'A wedding gown is not merely an ensemble; it is a sacred canvas of memory, emotion, and sartorial majesty. In our Victoria Island atelier, the Althea gown begins with French chantilly lace selected for its delicate floral architecture...\n\nOver 180 hours of meticulous hand-beading by master artisans bring the gown to life, featuring an internal multi-boned corset that sculpts the silhouette while providing effortless comfort from church procession to midnight reception.',
           coverImageUrl:
-              'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_couture_veil.jpg',
+              'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/lookbook/althea_couture_veil.jpg',
           isPublished: true,
           publishedAt: DateTime.now().subtract(const Duration(days: 2)),
           tags: const ['Haute Bridal', 'Lace Craft', 'Atelier'],
@@ -241,7 +241,7 @@ class CmsRepository {
           content:
               'For centuries, the clatter of vertical wooden looms in Iseyin and Kogi State has yielded Nigeria’s most prestigious heritage cloth—Aso-Oke. In this editorial, creative director Ochanya reflects on blending pure cotton threads with metallic gold lurex to create sharp modern blazers and royal traditional wedding ensembles.',
           coverImageUrl:
-              'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_fashion_week_runway.jpg',
+              'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/mai_atafo_tuxedo_gown.jpg',
           isPublished: true,
           publishedAt: DateTime.now().subtract(const Duration(days: 5)),
           tags: const ['Aso-Oke', 'Heritage', 'Textiles'],
@@ -255,7 +255,7 @@ class CmsRepository {
           content:
               'The Nigerian Owambe is a theatre of high fashion, social prestige, and unbridled joy. A true couture look must not only stun when stepping out of the limousine at Eko Hotel or Balmoral, but endure hours of dancing, greeting royalty, and celebrating life with effortless grace.',
           coverImageUrl:
-              'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_aso_oke.jpg',
+              'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/deola_sagoe_komole_gold.jpg',
           isPublished: true,
           publishedAt: DateTime.now().subtract(const Duration(days: 9)),
           tags: const ['Owambe', 'Occasionwear', 'Style Guide'],
@@ -269,7 +269,7 @@ class CmsRepository {
           content:
               'A tape measure records dimensions; a master couturier records posture, poise, and rhythm. When a bride enters our private Lagos salon, every seam is draped in live harmony with how she walks, breaths, and commands space.',
           coverImageUrl:
-              'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_bride_portrait.jpg',
+              'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/lookbook/tubo_corseted_mermaid.jpg',
           isPublished: true,
           publishedAt: DateTime.now().subtract(const Duration(days: 14)),
           tags: const ['Bespoke', 'Bridal', 'Fittings'],

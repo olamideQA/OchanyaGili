@@ -16,8 +16,8 @@ class CollectionsRepository {
       slug: 'bridal-couture',
       description:
           'Bespoke white wedding masterpieces, reception corsetry, and royal traditional bridal attire crafted with cathedral trains, hand-beaded French lace, and authentic coral regalia.',
-      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_wedding_bride_white.jpg',
-      heroImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_couture_veil.jpg',
+      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/althea_couture_gown.jpg',
+      heroImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/veekee_james_white_gown.jpg',
       season: 'Perennial Bridal',
       year: 2026,
       isFeatured: true,
@@ -30,8 +30,8 @@ class CollectionsRepository {
       slug: 'owambe-eclat',
       description:
           'Celebration wear engineered for the grandest Lagos soirees, milestone birthdays, and red carpets. Structural corsetry, hand-appliquéd crystals, and sculptural peplums.',
-      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_aso_oke.jpg',
-      heroImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_traditional.jpg',
+      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/deola_sagoe_komole_rose.jpg',
+      heroImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/nigerian_emerald_couture_gown.jpg',
       season: 'Autumn / Winter',
       year: 2026,
       isFeatured: true,
@@ -44,8 +44,8 @@ class CollectionsRepository {
       slug: 'heritage-weavers',
       description:
           'Handwoven Nigerian textiles reimagined into sharp contemporary power tailoring, architectural cropped blazers, and liquid silk co-ord sets.',
-      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_fashion_week_runway.jpg',
-      heroImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_couture_model.jpg',
+      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/deola_sagoe_komole_gold.jpg',
+      heroImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/mai_atafo_tailored_suit.jpg',
       season: 'Spring / Summer',
       year: 2026,
       isFeatured: false,
@@ -58,8 +58,8 @@ class CollectionsRepository {
       slug: 'lagos-solstice',
       description:
           'Fluid lightweight silhouettes designed for warm-climate soirees, Ilashe beach getaways, and tropical escapes. Hand-dyed Adire and pure mulberry silk.',
-      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_gele_headgear.jpg',
-      heroImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_models_fashion.jpg',
+      coverImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/andrea_iyamah_resort_silk.jpg',
+      heroImageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/collections/andrea_iyamah_luxury_model.jpg',
       season: 'Resort',
       year: 2026,
       isFeatured: false,

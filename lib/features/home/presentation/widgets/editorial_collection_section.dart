@@ -27,27 +27,27 @@ class EditorialCollectionSection extends StatelessWidget {
       {
         'title': 'Look 01 — The Althea Bridal Gown',
         'subtitle': 'French Chantilly Lace & Micro-Pearls',
-        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_wedding_bride_white.jpg',
+        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/lookbook/althea_couture_gown.jpg',
       },
       {
         'title': 'Look 02 — The Amina Reception Gown',
         'subtitle': 'Emerald Bugle-Beaded Lace & Corset',
-        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_gele_emerald.jpg',
+        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/lookbook/nigerian_emerald_couture_gown.jpg',
       },
       {
         'title': 'Look 03 — The Alaari Aso-Oke Suit',
         'subtitle': 'Handwoven Crimson Cotton & Gold Lurex',
-        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_fashion_week_runway.jpg',
+        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/lookbook/mai_atafo_tailored_suit.jpg',
       },
       {
         'title': 'Look 04 — The Seraphina Mikado Gown',
         'subtitle': 'Architectural Off-Shoulder Trumpet Silk',
-        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_bride_portrait.jpg',
+        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/lookbook/seraphina_mikado_gown.jpg',
       },
       {
         'title': 'Look 05 — The Royal Edo Coral Empress',
         'subtitle': 'Okuku Crown & Tiered Coral Regalia',
-        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_bride_coral_regalia.jpg',
+        'image': 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/lookbook/edo_bride_luxury_okuku.jpg',
       },
     ]
         : const <Map<String, String>>[];

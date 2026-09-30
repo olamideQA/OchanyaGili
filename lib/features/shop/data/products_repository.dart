@@ -32,13 +32,18 @@ class ProductsRepository {
         ProductImage(
           id: 'img-bridal-1a',
           productId: 'prod-bridal-althea-gown',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_wedding_bride_white.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/althea_couture_gown.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-bridal-1b',
           productId: 'prod-bridal-althea-gown',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_couture_veil.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/althea_couture_veil.jpg',
+        ),
+        ProductImage(
+          id: 'img-bridal-1c',
+          productId: 'prod-bridal-althea-gown',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/veekee_james_white_gown.jpg',
         ),
       ],
       variants: const [
@@ -66,13 +71,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-seraphina-1',
           productId: 'prod-bridal-seraphina-gown',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_bride_portrait.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/seraphina_mikado_gown.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-seraphina-2',
           productId: 'prod-bridal-seraphina-gown',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_bridal_smile.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/tubo_corseted_mermaid.jpg',
         ),
       ],
       variants: const [
@@ -103,13 +108,18 @@ class ProductsRepository {
         ProductImage(
           id: 'img-edo-1',
           productId: 'prod-bridal-edo-coral-1',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_bride_coral_regalia.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_bride_luxury_okuku.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-edo-2',
           productId: 'prod-bridal-edo-coral-1',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_traditional_ceremony.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_bride_coral_queen.jpg',
+        ),
+        ProductImage(
+          id: 'img-edo-3',
+          productId: 'prod-bridal-edo-coral-1',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_bride_regal_velvet.jpg',
         ),
       ],
       variants: const [
@@ -137,13 +147,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-blazer-1',
           productId: 'prod-rtw-blazer-1',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_couture_model.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/mai_atafo_tuxedo_gown.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-blazer-2',
           productId: 'prod-rtw-blazer-1',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/igbo_bride_traditional.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/mai_atafo_tailored_suit.jpg',
         ),
       ],
       variants: const [
@@ -173,13 +183,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-gown-1',
           productId: 'prod-mto-peplum-gown-1',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_aso_oke.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/deola_sagoe_komole_rose.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-gown-2',
           productId: 'prod-mto-peplum-gown-1',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_traditional.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_luxury_gele_sculpture.jpg',
         ),
       ],
       variants: const [
@@ -208,13 +218,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-amina-1',
           productId: 'prod-mto-amina-reception',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_gele_emerald.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_emerald_couture_gown.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-amina-2',
           productId: 'prod-mto-amina-reception',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/northern_nigerian_bride.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/veekee_james_reception.jpg',
         ),
       ],
       variants: const [
@@ -243,13 +253,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-alaari-1',
           productId: 'prod-rtw-alaari-suit',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_fashion_week_runway.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/mai_atafo_tailored_suit.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-alaari-2',
           productId: 'prod-rtw-alaari-suit',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_models_fashion.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/deola_sagoe_komole_gold.jpg',
         ),
       ],
       variants: const [
@@ -278,13 +288,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-adire-1',
           productId: 'prod-rtw-adire-robe',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/nigerian_gele_headgear.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/andrea_iyamah_resort_silk.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-adire-2',
           productId: 'prod-rtw-adire-robe',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/lagos_couture_model.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/andrea_iyamah_luxury_model.jpg',
         ),
       ],
       variants: const [
@@ -312,13 +322,13 @@ class ProductsRepository {
         ProductImage(
           id: 'img-custom-1',
           productId: 'prod-custom-royal-ensemble-1',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/yoruba_bride_traditional.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/deola_sagoe_komole_gold.jpg',
           isPrimary: true,
         ),
         ProductImage(
           id: 'img-custom-2',
           productId: 'prod-custom-royal-ensemble-1',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_traditional_ceremony.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/veekee_james_reception.jpg',
         ),
       ],
       variants: const [
@@ -344,7 +354,7 @@ class ProductsRepository {
         ProductImage(
           id: 'img-cuff-1',
           productId: 'prod-acc-gold-cuff-1',
-          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/igbo_bride_regal.jpg',
+          imageUrl: 'https://gfobzdetjbqwrxnutrkj.supabase.co/storage/v1/object/public/products/edo_bride_coral_queen.jpg',
           isPrimary: true,
         ),
       ],
