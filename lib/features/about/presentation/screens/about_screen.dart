@@ -86,12 +86,20 @@ class AboutScreen extends ConsumerWidget {
                             children: [
                               Expanded(
                                 flex: 6,
-                                child: AspectRatio(
-                                  aspectRatio: 16 / 11,
-                                  child: CachedNetworkImage(
-                                    imageUrl: about.heroImageUrl,
-                                    fit: BoxFit.cover,
-                                    placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                                child: Center(
+                                  child: ConstrainedBox(
+                                    constraints: const BoxConstraints(maxHeight: 420),
+                                    child: AspectRatio(
+                                      aspectRatio: 16 / 11,
+                                      child: ClipRect(
+                                        child: CachedNetworkImage(
+                                          imageUrl: about.heroImageUrl,
+                                          fit: BoxFit.cover,
+                                          alignment: Alignment.center,
+                                          placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -146,12 +154,18 @@ class AboutScreen extends ConsumerWidget {
                         : Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              AspectRatio(
-                                aspectRatio: 16 / 11,
-                                child: CachedNetworkImage(
-                                  imageUrl: about.heroImageUrl,
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                              ConstrainedBox(
+                                constraints: const BoxConstraints(maxHeight: 340),
+                                child: AspectRatio(
+                                  aspectRatio: 16 / 11,
+                                  child: ClipRect(
+                                    child: CachedNetworkImage(
+                                      imageUrl: about.heroImageUrl,
+                                      fit: BoxFit.cover,
+                                      alignment: Alignment.center,
+                                      placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                                    ),
+                                  ),
                                 ),
                               ),
                               const SizedBox(height: 36),

@@ -230,7 +230,7 @@ class _ShopScreenState extends ConsumerState<ShopScreen> {
                                   crossAxisCount: columns,
                                   crossAxisSpacing: isMobile ? 16 : 32,
                                   mainAxisSpacing: isMobile ? 32 : 48,
-                                  childAspectRatio: isMobile ? 0.62 : 0.68,
+                                  childAspectRatio: isMobile ? 0.65 : 0.74,
                                 ),
                                 itemCount: paginated.items.length,
                                 itemBuilder: (context, index) {

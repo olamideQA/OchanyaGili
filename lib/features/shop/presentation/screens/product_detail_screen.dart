@@ -222,7 +222,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                           id: 'demo-1',
                           productId: product.id,
                           imageUrl:
-                              'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=900&h=1200&auto=format&fit=crop')
+                              'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=900&h=1200&auto=format&fit=crop')
                     ]
                   : const <ProductImage>[]);
 
@@ -406,17 +406,21 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
   Widget _buildGallery(List<ProductImage> images, String currentImage, AppColorTokens colors, {bool hideThumbs = false}) {
     return Column(
       children: [
-        AspectRatio(
-          aspectRatio: 3 / 4,
-          child: ClipRect(
-            child: currentImage.isEmpty
-                ? Container(color: colors.surfaceVariant)
-                : CachedNetworkImage(
-                    imageUrl: currentImage,
-                    fit: BoxFit.cover,
-                    placeholder: (context, url) => Container(color: colors.surfaceVariant),
-                    errorWidget: (context, url, error) => Container(color: colors.surfaceVariant),
-                  ),
+        ConstrainedBox(
+          constraints: const BoxConstraints(maxHeight: 520),
+          child: AspectRatio(
+            aspectRatio: 3 / 4,
+            child: ClipRect(
+              child: currentImage.isEmpty
+                  ? Container(color: colors.surfaceVariant)
+                  : CachedNetworkImage(
+                      imageUrl: currentImage,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                      placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                      errorWidget: (context, url, error) => Container(color: colors.surfaceVariant),
+                    ),
+            ),
           ),
         ),
         if (images.length > 1 && !hideThumbs) ...[

@@ -26,17 +26,17 @@ class HomeScreen extends ConsumerWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          // 1. Campaign Hero (82% viewport, not full — lets body peek)
+          // 1. Campaign Hero (sleek editorial height)
           heroSlidesAsync.when(
             data: (slides) => EditorialHero(slides: slides),
             loading: () => SizedBox(
-              height: (MediaQuery.of(context).size.height * 0.68).clamp(420.0, 600.0),
+              height: (MediaQuery.of(context).size.height * 0.52).clamp(380.0, 470.0),
               child: Center(
                 child: CircularProgressIndicator(color: colors.primaryText, strokeWidth: 1.5),
               ),
             ),
             error: (err, stack) => SizedBox(
-              height: 400,
+              height: 380,
               child: Center(
                 child: Text('OCHANYA GILI', style: TextStyle(color: colors.primaryText, fontSize: 32, letterSpacing: 4)),
               ),
@@ -299,7 +299,7 @@ class _ExploreStyleSection extends ConsumerWidget {
                       crossAxisCount: isMobile ? 2 : 4,
                       crossAxisSpacing: 20,
                       mainAxisSpacing: 32,
-                      childAspectRatio: 0.62,
+                      childAspectRatio: isMobile ? 0.65 : 0.74,
                     ),
                     itemCount: items.length,
                     itemBuilder: (context, i) {

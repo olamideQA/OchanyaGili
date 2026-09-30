@@ -87,13 +87,17 @@ class CollectionDetailScreen extends ConsumerWidget {
                 // Hero Banner
                 Stack(
                   children: [
-                    AspectRatio(
-                      aspectRatio: isDesktop ? 21 / 9 : 16 / 10,
-                      child: CachedNetworkImage(
-                        imageUrl: collection.heroImageUrl ?? collection.coverImageUrl ?? '',
-                        fit: BoxFit.cover,
-                        placeholder: (context, url) => Container(color: colors.surfaceVariant),
-                        errorWidget: (context, url, error) => Container(color: colors.surfaceVariant),
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxHeight: 460),
+                      child: AspectRatio(
+                        aspectRatio: isDesktop ? 21 / 9 : 16 / 10,
+                        child: CachedNetworkImage(
+                          imageUrl: collection.heroImageUrl ?? collection.coverImageUrl ?? '',
+                          fit: BoxFit.cover,
+                          alignment: Alignment.center,
+                          placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                          errorWidget: (context, url, error) => Container(color: colors.surfaceVariant),
+                        ),
                       ),
                     ),
                     Positioned.fill(

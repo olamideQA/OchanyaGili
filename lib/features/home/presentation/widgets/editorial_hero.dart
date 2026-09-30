@@ -58,9 +58,11 @@ class _EditorialHeroState extends State<EditorialHero> {
     final isDesktop = screenWidth >= AppBreakpoints.desktop;
     final isMobile = screenWidth < AppBreakpoints.tablet;
 
+    final heroHeight = isMobile ? 380.0 : (screenHeight * 0.52).clamp(380.0, 470.0);
+
     if (widget.slides.isEmpty) {
       return SizedBox(
-        height: (screenHeight * 0.68).clamp(420.0, 600.0),
+        height: heroHeight,
         child: Center(
           child: Text('OCHANYA GILI', style: TextStyle(color: colors.primaryText, fontSize: 32, letterSpacing: 4)),
         ),
@@ -68,9 +70,7 @@ class _EditorialHeroState extends State<EditorialHero> {
     }
 
     return SizedBox(
-      // Industry-standard banner (~68% viewport, max 600) with pre-cropped
-      // 16:9 art so cover barely crops instead of microscope-zooming.
-      height: (screenHeight * 0.68).clamp(420.0, 600.0),
+      height: heroHeight,
       width: double.infinity,
       child: Stack(
         fit: StackFit.expand,
@@ -94,6 +94,7 @@ class _EditorialHeroState extends State<EditorialHero> {
                     CachedNetworkImage(
                       imageUrl: imageUrl,
                       fit: BoxFit.cover,
+                      alignment: Alignment.center,
                       placeholder: (context, url) => Container(color: colors.surfaceVariant),
                       errorWidget: (context, url, error) => Container(
                         color: colors.surfaceVariant,
@@ -105,29 +106,29 @@ class _EditorialHeroState extends State<EditorialHero> {
                   else
                     Container(color: colors.surfaceVariant),
 
-                  // Dark subtle editorial scrim for luxury legibility
+                  // High-contrast luxury editorial scrim
                   Container(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Colors.black.withValues(alpha: 0.15),
-                          Colors.black.withValues(alpha: 0.45),
+                          Colors.black.withValues(alpha: 0.35),
+                          Colors.black.withValues(alpha: 0.58),
                         ],
                       ),
                     ),
                   ),
 
-                  // Editorial Typography & CTA
+                  // Editorial Typography & CTA (Vertically centered)
                   SafeArea(
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: isMobile ? 24.0 : 64.0,
-                        vertical: 48.0,
+                        vertical: 32.0,
                       ),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -135,27 +136,27 @@ class _EditorialHeroState extends State<EditorialHero> {
                             style: TextStyle(
                               fontFamily: 'Playfair Display',
                               color: Colors.white,
-                              fontSize: isMobile ? 34 : (isDesktop ? 58 : 46),
+                              fontSize: isMobile ? 28 : (isDesktop ? 48 : 38),
                               fontWeight: FontWeight.w400,
-                              letterSpacing: isMobile ? 3.0 : 6.0,
+                              letterSpacing: isMobile ? 3.0 : 5.0,
                               height: 1.1,
                             ),
                           ),
-                          const SizedBox(height: 16),
+                          const SizedBox(height: 14),
                           ConstrainedBox(
                             constraints: const BoxConstraints(maxWidth: 620),
                             child: Text(
                               slide.subtitle,
                               style: TextStyle(
-                                color: Colors.white.withValues(alpha: 0.9),
-                                fontSize: isMobile ? 15 : 19,
-                                letterSpacing: 1.5,
+                                color: Colors.white.withValues(alpha: 0.92),
+                                fontSize: isMobile ? 14 : 17,
+                                letterSpacing: 1.4,
                                 fontWeight: FontWeight.w300,
-                                height: 1.5,
+                                height: 1.4,
                               ),
                             ),
                           ),
-                          const SizedBox(height: 36),
+                          const SizedBox(height: 24),
                           OutlinedButton(
                             onPressed: () {
                               context.go(slide.ctaLink);
@@ -165,21 +166,20 @@ class _EditorialHeroState extends State<EditorialHero> {
                               foregroundColor: Colors.white,
                               backgroundColor: Colors.transparent,
                               padding: EdgeInsets.symmetric(
-                                horizontal: isMobile ? 28 : 44,
-                                vertical: isMobile ? 16 : 22,
+                                horizontal: isMobile ? 28 : 40,
+                                vertical: isMobile ? 14 : 18,
                               ),
                               shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
                             ),
                             child: Text(
                               slide.ctaText.toUpperCase(),
                               style: TextStyle(
-                                fontSize: isMobile ? 12 : 13,
-                                letterSpacing: 2.5,
+                                fontSize: isMobile ? 11 : 12,
+                                letterSpacing: 2.2,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
                           ),
-                          const SizedBox(height: 24),
                         ],
                       ),
                     ),

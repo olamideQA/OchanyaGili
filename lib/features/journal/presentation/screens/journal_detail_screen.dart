@@ -161,16 +161,19 @@ class JournalDetailScreen extends ConsumerWidget {
                 // Featured Cover Image
                 Center(
                   child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 1100),
+                    constraints: const BoxConstraints(maxWidth: 1100, maxHeight: 460),
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: isMobile ? 24.0 : 40.0),
                       child: AspectRatio(
                         aspectRatio: 16 / 9,
-                        child: CachedNetworkImage(
-                          imageUrl: post.coverImageUrl,
-                          fit: BoxFit.cover,
-                          placeholder: (context, url) => Container(color: colors.surfaceVariant),
-                          errorWidget: (context, url, error) => Container(color: colors.surfaceVariant),
+                        child: ClipRect(
+                          child: CachedNetworkImage(
+                            imageUrl: post.coverImageUrl,
+                            fit: BoxFit.cover,
+                            alignment: Alignment.center,
+                            placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                            errorWidget: (context, url, error) => Container(color: colors.surfaceVariant),
+                          ),
                         ),
                       ),
                     ),

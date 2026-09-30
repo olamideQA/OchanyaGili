@@ -41,8 +41,8 @@ class CmsRepository {
         subtitle: 'Sartorial Sovereignty. Contemporary African Couture.',
         ctaText: 'EXPLORE THE CAMPAIGN',
         ctaLink: '/collections',
-        desktopImageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1920&h=1080&auto=format&fit=crop',
-        mobileImageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=768&h=1024&auto=format&fit=crop',
+        desktopImageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1920&h=1080&auto=format&fit=crop',
+        mobileImageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=768&h=1024&auto=format&fit=crop',
         sortOrder: 0,
       ),
       HeroSlide(

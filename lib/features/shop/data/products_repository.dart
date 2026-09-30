@@ -69,7 +69,7 @@ class ProductsRepository {
         ProductImage(
           id: 'img-gown-1',
           productId: 'prod-mto-peplum-gown-1',
-          imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=900&h=1200&auto=format&fit=crop',
+          imageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=900&h=1200&auto=format&fit=crop',
           isPrimary: true,
         ),
         ProductImage(

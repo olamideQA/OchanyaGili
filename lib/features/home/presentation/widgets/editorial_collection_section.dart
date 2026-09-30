@@ -63,23 +63,29 @@ class EditorialCollectionSection extends StatelessWidget {
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // Large Campaign Image Left
+                      // Refined Campaign Image Left
                       Expanded(
-                        flex: 6,
-                        child: AspectRatio(
-                          aspectRatio: 4 / 5,
-                          child: CachedNetworkImage(
-                            imageUrl: block.imageUrl,
-                            fit: BoxFit.cover,
-                            placeholder: (context, url) => Container(color: colors.surfaceVariant),
-                            errorWidget: (context, url, error) => Container(
-                              color: colors.surfaceVariant,
-                              child: Icon(Icons.image, color: colors.secondaryText, size: 48),
+                        flex: 5,
+                        child: Center(
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(maxHeight: 460),
+                            child: AspectRatio(
+                              aspectRatio: 4 / 5,
+                              child: CachedNetworkImage(
+                                imageUrl: block.imageUrl,
+                                fit: BoxFit.cover,
+                                alignment: Alignment.topCenter,
+                                placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                                errorWidget: (context, url, error) => Container(
+                                  color: colors.surfaceVariant,
+                                  child: Icon(Icons.image, color: colors.secondaryText, size: 48),
+                                ),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(width: 64),
+                      const SizedBox(width: 48),
                       // Editorial Headline + Copy Right
                       Expanded(
                         flex: 5,
@@ -159,12 +165,16 @@ class EditorialCollectionSection extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      AspectRatio(
-                        aspectRatio: 4 / 5,
-                        child: CachedNetworkImage(
-                          imageUrl: block.imageUrl,
-                          fit: BoxFit.cover,
-                          placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(maxHeight: 360),
+                        child: AspectRatio(
+                          aspectRatio: 4 / 5,
+                          child: CachedNetworkImage(
+                            imageUrl: block.imageUrl,
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
+                            placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 24),
@@ -231,7 +241,7 @@ class EditorialCollectionSection extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           SizedBox(
-            height: 320,
+            height: 290,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.symmetric(horizontal: isMobile ? 20.0 : 60.0),
@@ -239,7 +249,7 @@ class EditorialCollectionSection extends StatelessWidget {
               itemBuilder: (context, index) {
                 final item = galleryItems[index];
                 return Container(
-                  width: 260,
+                  width: 220,
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: InkWell(
                     onTap: () => context.go('/lookbook'),

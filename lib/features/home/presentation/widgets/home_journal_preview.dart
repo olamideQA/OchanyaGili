@@ -119,13 +119,19 @@ class _JournalCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AspectRatio(
-            aspectRatio: 16 / 10,
-            child: CachedNetworkImage(
-              imageUrl: post.coverImageUrl,
-              fit: BoxFit.cover,
-              placeholder: (context, url) => Container(color: colors.surface),
-              errorWidget: (context, url, error) => Container(color: colors.surface),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 240),
+            child: AspectRatio(
+              aspectRatio: 16 / 9,
+              child: ClipRect(
+                child: CachedNetworkImage(
+                  imageUrl: post.coverImageUrl,
+                  fit: BoxFit.cover,
+                  alignment: Alignment.center,
+                  placeholder: (context, url) => Container(color: colors.surface),
+                  errorWidget: (context, url, error) => Container(color: colors.surface),
+                ),
+              ),
             ),
           ),
           const SizedBox(height: 18),

@@ -191,13 +191,17 @@ class _LookbookSlide extends StatelessWidget {
               flex: 6,
               child: Center(
                 child: ClipRect(
-                  child: AspectRatio(
-                    aspectRatio: 3 / 4,
-                    child: CachedNetworkImage(
-                      imageUrl: look.fullImageUrl,
-                      fit: BoxFit.cover,
-                      placeholder: (context, url) => Container(color: colors.surfaceVariant),
-                      errorWidget: (context, url, error) => Container(color: colors.surfaceVariant),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxHeight: 520),
+                    child: AspectRatio(
+                      aspectRatio: 3 / 4,
+                      child: CachedNetworkImage(
+                        imageUrl: look.fullImageUrl,
+                        fit: BoxFit.cover,
+                        alignment: Alignment.topCenter,
+                        placeholder: (context, url) => Container(color: colors.surfaceVariant),
+                        errorWidget: (context, url, error) => Container(color: colors.surfaceVariant),
+                      ),
                     ),
                   ),
                 ),
@@ -279,12 +283,16 @@ class _LookbookSlide extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AspectRatio(
-            aspectRatio: 3 / 4,
-            child: CachedNetworkImage(
-              imageUrl: look.fullImageUrl,
-              fit: BoxFit.cover,
-              placeholder: (context, url) => Container(color: colors.surfaceVariant),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 400),
+            child: AspectRatio(
+              aspectRatio: 3 / 4,
+              child: CachedNetworkImage(
+                imageUrl: look.fullImageUrl,
+                fit: BoxFit.cover,
+                alignment: Alignment.topCenter,
+                placeholder: (context, url) => Container(color: colors.surfaceVariant),
+              ),
             ),
           ),
           const SizedBox(height: 32),
