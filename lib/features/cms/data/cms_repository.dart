@@ -39,7 +39,7 @@ class CmsRepository {
         id: 'default-slide-1',
         title: 'OCHANYA GILI',
         subtitle: 'Sartorial Sovereignty. Contemporary African Couture.',
-        ctaText: 'EXPLORE THE CAMPAIGN',
+        ctaText: 'EXPLORE ATELIER COUTURE',
         ctaLink: '/collections',
         desktopImageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1920&h=1080&auto=format&fit=crop',
         mobileImageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=768&h=1024&auto=format&fit=crop',

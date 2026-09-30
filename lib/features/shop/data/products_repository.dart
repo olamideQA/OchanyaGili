@@ -324,7 +324,10 @@ class ProductsRepository {
           .eq('is_archived', false)
           .order('sort_order', ascending: true);
 
-      final list = (res as List<dynamic>).map((e) => Product.fromJson(e as Map<String, dynamic>)).toList();
+      final list = (res as List<dynamic>)
+          .map((e) => Product.fromJson(e as Map<String, dynamic>))
+          .where((p) => p.images.isNotEmpty && p.primaryImageUrl.isNotEmpty)
+          .toList();
       if (list.isNotEmpty) return list;
     } catch (_) {}
 

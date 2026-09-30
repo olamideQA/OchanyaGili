@@ -286,10 +286,10 @@ class _ExploreStyleSection extends ConsumerWidget {
               constraints: const BoxConstraints(maxWidth: 1440),
               child: Column(
                 children: [
-                  Text('EXPLORE YOUR STYLE',
+                  Text('THE ATELIER EDIT',
                       style: TextStyle(fontSize: isMobile ? 24 : 34, letterSpacing: 2.5, color: colors.primaryText)),
                   const SizedBox(height: 8),
-                  Text('Most-loved atelier pieces, ready to shop.',
+                  Text('Signature gowns, bespoke bridal couture, and handwoven silhouettes.',
                       style: TextStyle(color: colors.textMuted, fontSize: 14)),
                   const SizedBox(height: 32),
                   GridView.builder(

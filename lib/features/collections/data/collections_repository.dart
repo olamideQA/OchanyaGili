@@ -77,7 +77,10 @@ class CollectionsRepository {
           .eq('is_archived', false)
           .order('sort_order', ascending: true);
 
-      final list = (res as List<dynamic>).map((e) => CollectionItem.fromJson(e as Map<String, dynamic>)).toList();
+      final list = (res as List<dynamic>)
+          .map((e) => CollectionItem.fromJson(e as Map<String, dynamic>))
+          .where((c) => !c.name.toUpperCase().contains('QA ') && !(c.description?.toUpperCase().contains('QA REGRESSION') ?? false))
+          .toList();
       if (list.isNotEmpty) return list;
     } catch (_) {}
 

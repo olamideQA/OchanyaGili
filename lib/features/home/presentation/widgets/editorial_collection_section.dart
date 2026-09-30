@@ -25,24 +25,24 @@ class EditorialCollectionSection extends StatelessWidget {
     final galleryItems = DemoConfig.enabled
         ? [
       {
-        'title': 'Look 01 — Ivory Peplum Gown',
-        'subtitle': 'Raw Silk & Hand-finished Organza',
-        'image': 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=600&h=800&auto=format&fit=crop',
+        'title': 'Look 01 — The Althea Bridal Gown',
+        'subtitle': 'French Chantilly Lace & Micro-Pearls',
+        'image': 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?q=80&w=800&auto=format&fit=crop',
       },
       {
-        'title': 'Look 04 — Sovereign Kaftan',
-        'subtitle': 'Gold Thread Filigree & Wool Crepe',
-        'image': 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&h=800&auto=format&fit=crop',
+        'title': 'Look 02 — The Amina Reception Gown',
+        'subtitle': 'Emerald Bugle-Beaded Lace & Corset',
+        'image': 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=800&auto=format&fit=crop',
       },
       {
-        'title': 'Look 08 — Tailored Tuxedo Gown',
-        'subtitle': 'Structured Velvet & Satin Lapel',
-        'image': 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&h=800&auto=format&fit=crop',
+        'title': 'Look 03 — The Alaari Aso-Oke Suit',
+        'subtitle': 'Handwoven Crimson Cotton & Gold Lurex',
+        'image': 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=800&auto=format&fit=crop',
       },
       {
-        'title': 'Look 12 — Architectural Corset Dress',
-        'subtitle': 'Sculpted Peplum & Artisanal Crepe',
-        'image': 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=600&h=800&auto=format&fit=crop',
+        'title': 'Look 04 — The Seraphina Mikado Gown',
+        'subtitle': 'Architectural Off-Shoulder Trumpet Silk',
+        'image': 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop',
       },
     ]
         : const <Map<String, String>>[];
@@ -214,7 +214,7 @@ class EditorialCollectionSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'CAMPAIGN SELECTS',
+                  'THE ATELIER LOOKBOOK',
                   style: TextStyle(
                     fontFamily: 'Playfair Display',
                     fontSize: 20,
@@ -223,11 +223,11 @@ class EditorialCollectionSection extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () => context.go('/collections'),
+                  onPressed: () => context.go('/lookbook'),
                   child: Row(
                     children: [
                       Text(
-                        'VIEW ALL LOOKS',
+                        'EXPLORE RUNWAY & ARCHIVE',
                         style: TextStyle(color: colors.accentVariant, letterSpacing: 1.5, fontSize: 12),
                       ),
                       const SizedBox(width: 6),
