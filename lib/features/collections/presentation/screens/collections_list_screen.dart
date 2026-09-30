@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
-import 'package:ochanya_gili/core/constants/app_breakpoints.dart';
 import 'package:ochanya_gili/features/collections/data/collections_repository.dart';
 import 'package:ochanya_gili/features/collections/domain/models/collection_item.dart';
 import 'package:ochanya_gili/features/shell/presentation/widgets/footer.dart';
@@ -16,8 +15,8 @@ class CollectionsListScreen extends ConsumerWidget {
     final colors = Theme.of(context).extension<AppColorTokens>()!;
     final collectionsAsync = ref.watch(publishedCollectionsProvider);
     final screenWidth = MediaQuery.of(context).size.width;
-    final isDesktop = screenWidth >= AppBreakpoints.desktop;
-    final isMobile = screenWidth < AppBreakpoints.tablet;
+    final isDesktop = screenWidth >= 1024;
+    final isMobile = screenWidth < 768;
 
     return collectionsAsync.when(
       data: (collections) => SingleChildScrollView(
@@ -107,13 +106,19 @@ class _CollectionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imageWidget = AspectRatio(
-      aspectRatio: 16 / 10,
-      child: CachedNetworkImage(
-        imageUrl: collection.coverImageUrl ?? '',
-        fit: BoxFit.cover,
-        placeholder: (context, url) => Container(color: colors.surfaceVariant),
-        errorWidget: (context, url, error) => Container(color: colors.surfaceVariant),
+    final imageWidget = ConstrainedBox(
+      constraints: BoxConstraints(maxHeight: isDesktop ? 380 : 300),
+      child: AspectRatio(
+        aspectRatio: 16 / 10,
+        child: ClipRect(
+          child: CachedNetworkImage(
+            imageUrl: collection.coverImageUrl ?? '',
+            fit: BoxFit.cover,
+            alignment: Alignment.center,
+            placeholder: (context, url) => Container(color: colors.surfaceVariant),
+            errorWidget: (context, url, error) => Container(color: colors.surfaceVariant),
+          ),
+        ),
       ),
     );
 
@@ -172,12 +177,12 @@ class _CollectionCard extends StatelessWidget {
         children: isEven
             ? [
                 Expanded(flex: 6, child: imageWidget),
-                const SizedBox(width: 64),
+                const SizedBox(width: 48),
                 Expanded(flex: 5, child: infoWidget),
               ]
             : [
                 Expanded(flex: 5, child: infoWidget),
-                const SizedBox(width: 64),
+                const SizedBox(width: 48),
                 Expanded(flex: 6, child: imageWidget),
               ],
       );

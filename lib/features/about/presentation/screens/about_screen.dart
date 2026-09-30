@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
-import 'package:ochanya_gili/core/constants/app_breakpoints.dart';
 import 'package:ochanya_gili/features/cms/data/cms_repository.dart';
 import 'package:ochanya_gili/features/shell/presentation/widgets/footer.dart';
 
@@ -14,8 +13,8 @@ class AboutScreen extends ConsumerWidget {
     final colors = Theme.of(context).extension<AppColorTokens>()!;
     final aboutAsync = ref.watch(aboutContentProvider);
     final screenWidth = MediaQuery.of(context).size.width;
-    final isDesktop = screenWidth >= AppBreakpoints.desktop;
-    final isMobile = screenWidth < AppBreakpoints.tablet;
+    final isDesktop = screenWidth >= 1024;
+    final isMobile = screenWidth < 768;
 
     return aboutAsync.when(
       data: (about) => SingleChildScrollView(

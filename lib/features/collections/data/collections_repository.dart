@@ -17,7 +17,7 @@ class CollectionsRepository {
       description:
           'A celebration of ceremonial court majesty. Sculptural peplums, hand-woven silks, and architectural silhouettes tailored in the Maitama atelier.',
       coverImageUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop',
-      heroImageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1920&auto=format&fit=crop',
+      heroImageUrl: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1920&auto=format&fit=crop',
       season: 'Autumn / Winter',
       year: 2026,
       isFeatured: true,

@@ -108,13 +108,14 @@ class CustomerWishlistScreen extends ConsumerWidget {
                           return _buildEmptyState(context, colors);
                         }
 
+                        final isMobile = MediaQuery.of(context).size.width < 768;
                         return GridView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                            childAspectRatio: 0.65,
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: isMobile ? 2 : 3,
+                            childAspectRatio: isMobile ? 0.65 : 0.72,
                             crossAxisSpacing: 16,
                             mainAxisSpacing: 20,
                           ),

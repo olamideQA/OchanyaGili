@@ -11,8 +11,8 @@ extension BreakpointExtension on BuildContext {
   double get screenWidth => MediaQuery.of(this).size.width;
   
   bool get isMobile => screenWidth < AppBreakpoints.tablet;
-  bool get isTablet => screenWidth >= AppBreakpoints.tablet && screenWidth < AppBreakpoints.desktop;
-  bool get isDesktop => screenWidth >= AppBreakpoints.desktop && screenWidth < AppBreakpoints.wide;
+  bool get isTablet => screenWidth >= AppBreakpoints.tablet && screenWidth < 1024;
+  bool get isDesktop => screenWidth >= 1024;
   bool get isWide => screenWidth >= AppBreakpoints.wide;
 }
 

@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ochanya_gili/core/config/demo_config.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
-import 'package:ochanya_gili/core/constants/app_breakpoints.dart';
 import 'package:ochanya_gili/features/cms/domain/models/cms_content.dart';
 
 class EditorialCollectionSection extends StatelessWidget {
@@ -18,8 +17,8 @@ class EditorialCollectionSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = Theme.of(context).extension<AppColorTokens>()!;
     final screenWidth = MediaQuery.of(context).size.width;
-    final isDesktop = screenWidth >= AppBreakpoints.desktop;
-    final isMobile = screenWidth < AppBreakpoints.tablet;
+    final isDesktop = screenWidth >= 1024;
+    final isMobile = screenWidth < 768;
 
     // DEMO-SEED START: pitch campaign gallery. Set DemoConfig.enabled=false
     // to hide for clean template (section auto-hides when empty).

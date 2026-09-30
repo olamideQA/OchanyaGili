@@ -6,7 +6,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:intl/intl.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
 import 'package:ochanya_gili/core/config/demo_config.dart';
-import 'package:ochanya_gili/core/constants/app_breakpoints.dart';
 import 'package:ochanya_gili/core/seo/seo_metadata.dart';
 import 'package:ochanya_gili/core/seo/seo_service.dart';
 import 'package:ochanya_gili/features/analytics/data/analytics_service.dart';
@@ -159,8 +158,8 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
   Widget build(BuildContext context) {
     final colors = Theme.of(context).extension<AppColorTokens>()!;
     final screenWidth = MediaQuery.of(context).size.width;
-    final isDesktop = screenWidth >= AppBreakpoints.desktop;
-    final isMobile = screenWidth < AppBreakpoints.tablet;
+    final isDesktop = screenWidth >= 1024;
+    final isMobile = screenWidth < 768;
 
     final currencyFormatter = NumberFormat.currency(locale: 'en_NG', symbol: '₦', decimalDigits: 0);
 
@@ -376,7 +375,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                           crossAxisCount: isDesktop ? 4 : 2,
                           crossAxisSpacing: 20,
                           mainAxisSpacing: 32,
-                          childAspectRatio: 0.62,
+                          childAspectRatio: isMobile ? 0.65 : 0.74,
                         ),
                         itemCount: related.length,
                         itemBuilder: (context, index) {

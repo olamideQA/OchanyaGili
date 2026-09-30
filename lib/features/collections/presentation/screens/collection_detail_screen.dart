@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
-import 'package:ochanya_gili/core/constants/app_breakpoints.dart';
 import 'package:ochanya_gili/core/seo/seo_metadata.dart';
 import 'package:ochanya_gili/core/seo/seo_service.dart';
 import 'package:ochanya_gili/features/analytics/data/analytics_service.dart';
@@ -37,8 +36,8 @@ class CollectionDetailScreen extends ConsumerWidget {
     final colors = Theme.of(context).extension<AppColorTokens>()!;
     final repo = ref.watch(collectionsRepositoryProvider);
     final screenWidth = MediaQuery.of(context).size.width;
-    final isDesktop = screenWidth >= AppBreakpoints.desktop;
-    final isMobile = screenWidth < AppBreakpoints.tablet;
+    final isDesktop = screenWidth >= 1024;
+    final isMobile = screenWidth < 768;
 
     return Scaffold(
       body: FutureBuilder<CollectionItem?>(
@@ -88,7 +87,7 @@ class CollectionDetailScreen extends ConsumerWidget {
                 Stack(
                   children: [
                     ConstrainedBox(
-                      constraints: const BoxConstraints(maxHeight: 460),
+                      constraints: BoxConstraints(maxHeight: isMobile ? 280 : 380),
                       child: AspectRatio(
                         aspectRatio: isDesktop ? 21 / 9 : 16 / 10,
                         child: CachedNetworkImage(

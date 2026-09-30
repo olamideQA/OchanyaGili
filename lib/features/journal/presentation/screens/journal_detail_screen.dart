@@ -161,7 +161,7 @@ class JournalDetailScreen extends ConsumerWidget {
                 // Featured Cover Image
                 Center(
                   child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 1100, maxHeight: 460),
+                    constraints: BoxConstraints(maxWidth: 1100, maxHeight: isMobile ? 260 : 400),
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: isMobile ? 24.0 : 40.0),
                       child: AspectRatio(

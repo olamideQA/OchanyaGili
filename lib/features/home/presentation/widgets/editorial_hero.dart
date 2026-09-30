@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
-import 'package:ochanya_gili/core/constants/app_breakpoints.dart';
 import 'package:ochanya_gili/features/cms/domain/models/cms_content.dart';
 
 class EditorialHero extends StatefulWidget {
@@ -55,8 +54,8 @@ class _EditorialHeroState extends State<EditorialHero> {
     final colors = Theme.of(context).extension<AppColorTokens>()!;
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final isDesktop = screenWidth >= AppBreakpoints.desktop;
-    final isMobile = screenWidth < AppBreakpoints.tablet;
+    final isDesktop = screenWidth >= 1024;
+    final isMobile = screenWidth < 768;
 
     final heroHeight = isMobile ? 380.0 : (screenHeight * 0.52).clamp(380.0, 470.0);
 

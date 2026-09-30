@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
-import 'package:ochanya_gili/core/constants/app_breakpoints.dart';
 import 'package:ochanya_gili/features/lookbook/data/lookbook_repository.dart';
 import 'package:ochanya_gili/features/lookbook/domain/models/lookbook_entry.dart';
 import 'package:ochanya_gili/features/shell/presentation/widgets/footer.dart';
@@ -50,8 +49,8 @@ class _LookbookScreenState extends ConsumerState<LookbookScreen> {
     final colors = Theme.of(context).extension<AppColorTokens>()!;
     final looksAsync = ref.watch(publishedLookbooksProvider);
     final screenWidth = MediaQuery.of(context).size.width;
-    final isDesktop = screenWidth >= AppBreakpoints.desktop;
-    final isMobile = screenWidth < AppBreakpoints.tablet;
+    final isDesktop = screenWidth >= 1024;
+    final isMobile = screenWidth < 768;
 
     return looksAsync.when(
         data: (looks) {

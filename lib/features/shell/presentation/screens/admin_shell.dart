@@ -14,7 +14,7 @@ class AdminShell extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final colors = Theme.of(context).extension<AppColorTokens>()!;
-    final isDesktop = MediaQuery.of(context).size.width >= 1440; // Desktop breakpoint
+    final isDesktop = MediaQuery.of(context).size.width >= 1024; // Desktop/Laptop breakpoint
 
     return Scaffold(
       backgroundColor: colors.background,
