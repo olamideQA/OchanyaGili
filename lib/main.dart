@@ -16,7 +16,7 @@ void main() async {
     return;
   }
 
-  // Initialize Supabase services
+  // Initialize Supabase services (never blocks first paint — see SupabaseConfig).
   await SupabaseConfig.initialize();
 
   runApp(
