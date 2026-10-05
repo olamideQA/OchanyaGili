@@ -40,15 +40,26 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
 
     try {
       final repository = ref.read(authRepositoryProvider);
-      await repository.signUp(
+      final response = await repository.signUp(
         email: _emailController.text.trim(),
         password: _passwordController.text,
         name: _nameController.text.trim(),
       );
+      if (response.session != null && mounted) {
+        context.go('/account');
+      } else if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Account created successfully! Please sign in.'),
+            backgroundColor: Color(0xFF2E7D32),
+          ),
+        );
+        context.go('/login');
+      }
     } catch (e) {
       if (mounted) {
         setState(() {
-          _errorMessage = e.toString();
+          _errorMessage = e.toString().replaceFirst(RegExp(r'^.*Exception:\s*'), '');
         });
       }
     } finally {
