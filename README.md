@@ -1,17 +1,17 @@
-# ochanya_gili
+# Ochanya Gili — Contemporary African Haute Couture & Ready-to-Wear
 
-A new Flutter project.
+[![Deploy to Firebase Hosting](https://github.com/olamideQA/OchanyaGili/actions/workflows/firebase-deploy.yml/badge.svg)](https://github.com/olamideQA/OchanyaGili/actions/workflows/firebase-deploy.yml)
 
-## Getting Started
+## Live Deployment
+- **Storefront**: [https://ochanyagili.web.app](https://ochanyagili.web.app)
+- **Secondary Domain**: [https://ochanyagili.firebaseapp.com](https://ochanyagili.firebaseapp.com)
+- **Admin Customization Studio**: [https://ochanyagili.web.app/login](https://ochanyagili.web.app/login)
 
-This project is a starting point for a Flutter application.
+## Automated CI/CD
+Every push to the `main` branch automatically triggers GitHub Actions to build Flutter Web and deploy live to Firebase Hosting.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tech Stack
+- **Frontend**: Flutter Web (CanvasKit / HTML)
+- **Backend & Database**: Supabase (PostgreSQL, Auth, Storage, Row-Level Security)
+- **Hosting & CDN**: Firebase Hosting (Global Google Edge CDN)
+- **CI/CD**: GitHub Actions
