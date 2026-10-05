@@ -39,15 +39,16 @@ class EnvConfig {
   static bool get isStaging => environment == AppEnvironment.staging;
   static bool get isDevelopment => environment == AppEnvironment.development;
 
-  // Supabase Infrastructure (REQUIRED — no defaults by design)
+  // Supabase Infrastructure
   static const String supabaseUrl = String.fromEnvironment(
     'SUPABASE_URL',
-    defaultValue: '',
+    defaultValue: 'https://gfobzdetjbqwrxnutrkj.supabase.co',
   );
 
   static const String supabaseAnonKey = String.fromEnvironment(
     'SUPABASE_ANON_KEY',
-    defaultValue: '',
+    defaultValue:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdmb2J6ZGV0amJxd3J4bnV0cmtqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA2MzQzMDYsImV4cCI6MjEwNjIxMDMwNn0.7twBT6zr8ctBxPLkC42MPqyQkc9FwEJdvfyi5nab93g',
   );
 
   static bool get isBackendConfigured =>
@@ -56,7 +57,7 @@ class EnvConfig {
   // Domains & CDN (buyer-owned)
   static const String siteUrl = String.fromEnvironment(
     'SITE_URL',
-    defaultValue: '',
+    defaultValue: 'https://ochanyagili.web.app',
   );
 
   static const String cdnUrl = String.fromEnvironment(
