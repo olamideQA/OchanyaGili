@@ -33,35 +33,80 @@ class AdminSidebar extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'OCHANYA GILI',
-                  style: TextStyle(
-                    fontFamily: 'Playfair Display',
-                    color: colors.primaryText,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    letterSpacing: 2.0,
+                InkWell(
+                  onTap: () => context.go('/'),
+                  borderRadius: BorderRadius.circular(4),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'OCHANYA GILI',
+                        style: TextStyle(
+                          fontFamily: 'Playfair Display',
+                          color: colors.primaryText,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          letterSpacing: 2.0,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        'Atelier Control & Ops',
+                        style: TextStyle(color: colors.secondaryText, fontSize: 11),
+                      ),
+                    ],
                   ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  'Atelier Control & Ops',
-                  style: TextStyle(color: colors.secondaryText, fontSize: 11),
                 ),
                 const SizedBox(height: 12),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: colors.accentVariant.withValues(alpha: 0.15),
-                    border: Border.all(color: colors.accentVariant.withValues(alpha: 0.4)),
-                  ),
-                  child: Text(
-                    roleLabel,
-                    style: TextStyle(
-                      color: colors.primaryText,
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.0,
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: colors.accentVariant.withValues(alpha: 0.15),
+                        border: Border.all(color: colors.accentVariant.withValues(alpha: 0.4)),
+                      ),
+                      child: Text(
+                        roleLabel,
+                        style: TextStyle(
+                          color: colors.primaryText,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 14),
+                // Prominent View Live Storefront Button
+                InkWell(
+                  onTap: () => context.go('/'),
+                  borderRadius: BorderRadius.circular(4),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+                    decoration: BoxDecoration(
+                      color: colors.surfaceVariant,
+                      border: Border.all(color: colors.border),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.storefront_outlined, size: 14, color: colors.primaryText),
+                        const SizedBox(width: 8),
+                        Text(
+                          'VIEW LIVE STOREFRONT',
+                          style: TextStyle(
+                            color: colors.primaryText,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1.0,
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        Icon(Icons.arrow_outward, size: 12, color: colors.secondaryText),
+                      ],
                     ),
                   ),
                 ),

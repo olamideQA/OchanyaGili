@@ -66,18 +66,37 @@ class _CustomerShellState extends ConsumerState<CustomerShell> {
       appBar: isDesktop
           ? null
           : AppBar(
-              title: Text(
-                'MY ATELIER ACCOUNT',
-                style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 2.0,
-                  color: colors.primaryText,
+              title: InkWell(
+                onTap: () => context.go('/'),
+                child: Text(
+                  'MY ATELIER ACCOUNT',
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2.0,
+                    color: colors.primaryText,
+                  ),
                 ),
               ),
               backgroundColor: colors.surface,
               iconTheme: IconThemeData(color: colors.primaryText),
               elevation: 0,
+              actions: [
+                TextButton.icon(
+                  onPressed: () => context.go('/'),
+                  icon: Icon(Icons.storefront_outlined, size: 16, color: colors.accentVariant),
+                  label: Text(
+                    'STOREFRONT',
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.0,
+                      color: colors.accentVariant,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+              ],
             ),
       drawer: isDesktop
           ? null
@@ -100,20 +119,30 @@ class _CustomerShellState extends ConsumerState<CustomerShell> {
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 28),
+                        horizontal: 24, vertical: 24),
                     decoration: BoxDecoration(
                       border: Border(bottom: BorderSide(color: colors.border)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'OCHANYA GILI PRIVÉ',
-                          style: TextStyle(
-                            fontSize: 10,
-                            letterSpacing: 2.5,
-                            fontWeight: FontWeight.bold,
-                            color: colors.accentVariant,
+                        InkWell(
+                          onTap: () => context.go('/'),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.arrow_back_ios_new, size: 10, color: colors.accentVariant),
+                              const SizedBox(width: 4),
+                              Text(
+                                'OCHANYA GILI PRIVÉ',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  letterSpacing: 2.5,
+                                  fontWeight: FontWeight.bold,
+                                  color: colors.accentVariant,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         const SizedBox(height: 8),
@@ -227,13 +256,26 @@ class _CustomerShellState extends ConsumerState<CustomerShell> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text(
-                'OCHANYA GILI PRIVÉ',
-                style: TextStyle(
-                  fontSize: 10,
-                  letterSpacing: 2.0,
-                  fontWeight: FontWeight.bold,
-                  color: colors.accentVariant,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                  context.go('/');
+                },
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.storefront_outlined, size: 14, color: colors.accentVariant),
+                    const SizedBox(width: 6),
+                    Text(
+                      'OCHANYA GILI PRIVÉ',
+                      style: TextStyle(
+                        fontSize: 10,
+                        letterSpacing: 2.0,
+                        fontWeight: FontWeight.bold,
+                        color: colors.accentVariant,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(height: 6),
@@ -265,6 +307,15 @@ class _CustomerShellState extends ConsumerState<CustomerShell> {
     return ListView(
       padding: const EdgeInsets.symmetric(vertical: 8),
       children: [
+        _navItem(
+          title: 'Storefront Homepage',
+          icon: Icons.storefront_outlined,
+          route: '/',
+          isSelected: false,
+          colors: colors,
+          context: context,
+        ),
+        Divider(color: colors.border.withValues(alpha: 0.5), height: 16),
         _navItem(
           title: 'Dashboard',
           icon: Icons.dashboard_outlined,

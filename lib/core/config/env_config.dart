@@ -57,12 +57,12 @@ class EnvConfig {
   // Domains & CDN (buyer-owned)
   static const String siteUrl = String.fromEnvironment(
     'SITE_URL',
-    defaultValue: 'https://ochanyagili.web.app',
+    defaultValue: 'https://ochanyagili.com',
   );
 
   static const String cdnUrl = String.fromEnvironment(
     'CDN_URL',
-    defaultValue: '',
+    defaultValue: 'https://cdn.ochanyagili.com',
   );
 
   // Payment Gateway (Paystack — buyer keys)
@@ -73,7 +73,7 @@ class EnvConfig {
 
   static const String paystackWebhookUrl = String.fromEnvironment(
     'PAYSTACK_WEBHOOK_URL',
-    defaultValue: '',
+    defaultValue: 'https://gfobzdetjbqwrxnutrkj.supabase.co/functions/v1/paystack-webhook',
   );
 
   // Observability & Telemetry (buyer-owned, optional)
@@ -88,8 +88,8 @@ class EnvConfig {
   );
 
   // Deep Linking & Universal Links (TEMPLATE: buyer sets per brand)
-  static const String deepLinkScheme = 'atelier';
-  static const String deepLinkHost = '';
+  static const String deepLinkScheme = 'ochanyagili';
+  static const String deepLinkHost = 'ochanyagili.com';
 
   // Maison Contacts (TEMPLATE: buyer-owned; real values live in backend settings)
   static const String supportEmail = '';

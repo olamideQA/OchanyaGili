@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
+import 'package:ochanya_gili/features/auth/presentation/providers/auth_provider.dart';
 import 'package:ochanya_gili/features/shell/presentation/widgets/nav_bar.dart';
 import 'package:ochanya_gili/features/cms/data/cms_repository.dart';
 import 'package:ochanya_gili/features/cms/domain/models/brand_header.dart';
@@ -91,7 +92,19 @@ class _PublicShellState extends ConsumerState<PublicShell> {
                 ),
               const Divider(),
               const _DrawerLink(title: 'Cart', path: '/cart'),
-              const _DrawerLink(title: 'Client Sign In', path: '/login'),
+              Consumer(
+                builder: (context, ref, _) {
+                  final user = ref.watch(currentUserProvider).value;
+                  if (user != null) {
+                    final isAdmin = user.role.canAccessAdmin;
+                    return _DrawerLink(
+                      title: isAdmin ? 'Admin Panel' : 'My Account (${user.name})',
+                      path: isAdmin ? '/admin' : '/account',
+                    );
+                  }
+                  return const _DrawerLink(title: 'Client Sign In', path: '/login');
+                },
+              ),
             ],
           ),
         ),

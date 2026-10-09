@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:ochanya_gili/features/shell/presentation/screens/public_shell.dart';
 import 'package:ochanya_gili/core/theme/app_theme.dart';
+import 'package:ochanya_gili/features/auth/presentation/providers/auth_provider.dart';
 import 'package:ochanya_gili/features/cart/presentation/providers/cart_provider.dart';
 import 'package:ochanya_gili/features/cms/data/cms_repository.dart';
 import 'package:ochanya_gili/features/cms/domain/models/brand_header.dart';
@@ -101,9 +102,26 @@ class NavBar extends ConsumerWidget implements PreferredSizeWidget {
           tooltip: 'Search the catalogue',
           onPressed: () => context.go('/shop'),
         ),
-        IconButton(
-          icon: Icon(Icons.person_outline, color: colors.text),
-          onPressed: () => context.go('/login'),
+        Consumer(
+          builder: (context, ref, _) {
+            final user = ref.watch(currentUserProvider).value;
+            if (user != null) {
+              final isAdmin = user.role.canAccessAdmin;
+              return IconButton(
+                icon: Icon(
+                  isAdmin ? Icons.admin_panel_settings_outlined : Icons.account_circle_outlined,
+                  color: colors.accentVariant,
+                ),
+                tooltip: isAdmin ? 'Admin Panel' : 'My Account (${user.name})',
+                onPressed: () => context.go(isAdmin ? '/admin' : '/account'),
+              );
+            }
+            return IconButton(
+              icon: Icon(Icons.person_outline, color: colors.text),
+              tooltip: 'Sign In',
+              onPressed: () => context.go('/login'),
+            );
+          },
         ),
         Stack(
           alignment: Alignment.center,
